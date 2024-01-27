@@ -9,7 +9,7 @@ class CounterComponent extends Component {
       <div>
         <h1>Counter: {this.props.count}</h1>
         <button onClick={this.props.increment}>Increment</button>
-        <button onClick={this.props.decrement}>Decrement</button>
+        <button onClick={this.props.decrement} disabled={this.props.isDecrementDisabled}>Decrement</button>
       </div>
     );
   }
@@ -18,6 +18,7 @@ class CounterComponent extends Component {
 const mapStateToProps = (state) => { console.log(state);
   return {
     count: state.mycounter.count,
+    isDecrementDisabled: state.mycounter.isDecrementDisabled,
   };
 };
 
