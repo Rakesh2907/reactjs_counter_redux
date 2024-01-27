@@ -8,8 +8,8 @@ class CounterComponent extends Component {
     return (
       <div>
         <h1>Counter: {this.props.count}</h1>
-        <button onClick={this.props.increment}>Increment</button>
-        <button onClick={this.props.decrement} disabled={this.props.isDecrementDisabled}>Decrement</button>
+        <button onClick={this.props.onIncrement}>Increment</button>
+        <button onClick={this.props.inDecrement} disabled={this.props.isDecrementDisabled}>Decrement</button>
       </div>
     );
   }
@@ -24,8 +24,8 @@ const mapStateToProps = (state) => { console.log(state);
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    increment: () => dispatch(increment()),
-    decrement: () => dispatch(decrement()),
+    onIncrement: () => dispatch(increment()),
+    inDecrement: () => dispatch(decrement()),
   };
 };
 
